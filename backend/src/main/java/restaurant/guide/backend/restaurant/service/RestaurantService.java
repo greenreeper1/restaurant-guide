@@ -1,5 +1,7 @@
 package restaurant.guide.backend.restaurant.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import jakarta.transaction.Transactional;
@@ -21,5 +23,13 @@ public class RestaurantService {
         Restaurant restaurant = repository.findById(id).orElseThrow(() -> new RestaurantNotFoundException(id));
 
         return mapper.toRestaurantResponse(restaurant);
+    }
+
+    public List<RestaurantResponse> getAll(){
+        List<Restaurant> restaurants = repository.findAll();
+
+        return restaurants.stream()
+                .map(mapper::toRestaurantResponse)
+                .toList();
     }
 }
