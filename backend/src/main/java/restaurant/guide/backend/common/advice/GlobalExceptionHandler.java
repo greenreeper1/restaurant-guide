@@ -12,10 +12,10 @@ import restaurant.guide.backend.restaurant.exceptions.RestaurantNotFoundExceptio
 @RestControllerAdvice
 public class GlobalExceptionHandler {
     @ExceptionHandler(RestaurantNotFoundException.class)
-    public ResponseEntity<?> handleRestaurantNotFound(RestaurantNotFoundException ex){
+    public ResponseEntity<Map<String, String>> handleRestaurantNotFound(RestaurantNotFoundException ex){
         return ResponseEntity.status(HttpStatus.NOT_FOUND)
         .body(Map.of(
-            "error", "BAD_REQUEST",
+            "error", "NOT_FOUND",
             "message", ex.getMessage()
         ));
     }
