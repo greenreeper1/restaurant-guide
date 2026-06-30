@@ -1,4 +1,4 @@
-package restaurant.guide.backend.restaurant.repository;
+package restaurant.guide.backend.unit.restaurant.repository;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
 
 import restaurant.guide.backend.restaurant.model.Restaurant;
+import restaurant.guide.backend.restaurant.repository.RestaurantRepository;
 
 @DataJpaTest
 public class RestaurantRepositoryTest {

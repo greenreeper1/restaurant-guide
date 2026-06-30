@@ -1,4 +1,4 @@
-package restaurant.guide.backend.restaurant.service;
+package restaurant.guide.backend.unit.restaurant.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -23,6 +23,7 @@ import restaurant.guide.backend.restaurant.exceptions.RestaurantNotFoundExceptio
 import restaurant.guide.backend.restaurant.mapper.RestaurantMapper;
 import restaurant.guide.backend.restaurant.model.Restaurant;
 import restaurant.guide.backend.restaurant.repository.RestaurantRepository;
+import restaurant.guide.backend.restaurant.service.RestaurantService;
 
 @ExtendWith(MockitoExtension.class)
 public class RestaurantServiceTest {

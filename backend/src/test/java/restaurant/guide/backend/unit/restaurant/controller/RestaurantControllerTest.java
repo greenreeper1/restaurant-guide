@@ -1,4 +1,4 @@
-package restaurant.guide.backend.restaurant.controller;
+package restaurant.guide.backend.unit.restaurant.controller;
 
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.verify;
@@ -14,6 +14,7 @@ import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
+import restaurant.guide.backend.restaurant.controller.RestaurantController;
 import restaurant.guide.backend.restaurant.dto.RestaurantResponse;
 import restaurant.guide.backend.restaurant.service.RestaurantService;
 

@@ -1,4 +1,4 @@
-package restaurant.guide.backend.common.advice;
+package restaurant.guide.backend.unit.common.advice;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
+import restaurant.guide.backend.common.advice.GlobalExceptionHandler;
 import restaurant.guide.backend.restaurant.controller.RestaurantController;
 import restaurant.guide.backend.restaurant.exceptions.RestaurantNotFoundException;
 import restaurant.guide.backend.restaurant.service.RestaurantService;

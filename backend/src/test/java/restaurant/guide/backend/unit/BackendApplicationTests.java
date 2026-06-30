@@ -1,4 +1,4 @@
-package restaurant.guide.backend;
+package restaurant.guide.backend.unit;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
