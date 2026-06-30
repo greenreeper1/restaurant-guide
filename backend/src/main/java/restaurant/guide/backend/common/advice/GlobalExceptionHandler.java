@@ -13,7 +13,7 @@ import restaurant.guide.backend.restaurant.exceptions.RestaurantNotFoundExceptio
 public class GlobalExceptionHandler {
     @ExceptionHandler(RestaurantNotFoundException.class)
     public ResponseEntity<?> handleRestaurantNotFound(RestaurantNotFoundException ex){
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
         .body(Map.of(
             "error", "BAD_REQUEST",
             "message", ex.getMessage()
