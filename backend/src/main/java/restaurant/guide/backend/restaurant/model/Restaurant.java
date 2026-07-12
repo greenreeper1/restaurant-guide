@@ -19,6 +19,16 @@ public class Restaurant {
 
     private String category;
 
+    public Restaurant() {
+    }
+
+    public Restaurant(Long id, String name, String city, String category) {
+        this.id = id;
+        this.name = name;
+        this.city = city;
+        this.category = category;
+    }
+
     //#region Getters and setters
     public Long getId() {
         return id;
