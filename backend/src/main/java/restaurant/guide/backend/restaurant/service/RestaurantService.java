@@ -32,4 +32,10 @@ public class RestaurantService {
                 .map(mapper::toRestaurantResponse)
                 .toList();
     }
+
+    public RestaurantResponse registerRestaurant(RestaurantResponse restaurant){
+        Restaurant restaurantToSave = new Restaurant(restaurant.id(), restaurant.name(), restaurant.city(), restaurant.category());
+        repository.save(restaurantToSave);
+        return restaurant;
+    }
 }
