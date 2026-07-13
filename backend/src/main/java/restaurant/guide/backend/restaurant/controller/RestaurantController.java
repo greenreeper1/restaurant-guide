@@ -9,6 +9,7 @@ import restaurant.guide.backend.restaurant.service.RestaurantService;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,6 +25,11 @@ public class RestaurantController {
     public RestaurantResponse getById(@PathVariable Long id) {
         return service.getById(id);
     }
+    
+    @DeleteMapping("/{id}")
+    public RestaurantResponse deleteRestaurant(RestaurantResponse restaurantResponse){
+        return service.deleteRestaurant(restaurantResponse);
+    }
 
     @GetMapping("")
     public List<RestaurantResponse> getAll(){
@@ -34,4 +40,5 @@ public class RestaurantController {
     public RestaurantResponse register(RestaurantResponse restaurantResponse){
         return service.registerRestaurant(restaurantResponse);
     }
+
 }
