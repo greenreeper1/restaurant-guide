@@ -38,4 +38,9 @@ public class RestaurantService {
         repository.save(restaurantToSave);
         return restaurant;
     }
+
+    public RestaurantResponse deleteRestaurant(RestaurantResponse restaurantResponse){
+        repository.deleteById(restaurantResponse.id());
+        return restaurantResponse;
+    }
 }
