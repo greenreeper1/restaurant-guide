@@ -39,8 +39,7 @@ public class RestaurantService {
         return restaurant;
     }
 
-    public RestaurantResponse deleteRestaurant(RestaurantResponse restaurantResponse){
-        repository.deleteById(restaurantResponse.id());
-        return restaurantResponse;
+    public void deleteRestaurant(Long id){
+        repository.deleteById(id);
     }
 }
