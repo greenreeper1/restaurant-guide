@@ -24,21 +24,25 @@ public class RestaurantController {
 
     @GetMapping("/{id}")
     public RestaurantResponse getById(@PathVariable Long id) {
+        log.info("Getting restaurant with id : {}", id);
         return service.getById(id);
     }
     
     @DeleteMapping("/{id}")
     public void deleteRestaurant(@PathVariable Long id){
+        log.info("Deleting restaurant with id : {}", id);
         service.deleteRestaurant(id);
     }
 
     @GetMapping("")
     public List<RestaurantResponse> getAll(){
+        log.info("Getting all restaurants");
         return service.getAll();
     }
     
     @PostMapping("/register")
     public RestaurantResponse register(RestaurantResponse restaurantResponse){
+        log.info("Adding new restaurant \"{}\" to database", restaurantResponse.name());
         return service.registerRestaurant(restaurantResponse);
     }
 
