@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import restaurant.guide.backend.restaurant.dto.RestaurantResponse;
 import restaurant.guide.backend.restaurant.service.RestaurantService;
 
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-
+@Slf4j
 @RestController
 @RequestMapping("/api/restaurants")
 @RequiredArgsConstructor
@@ -27,8 +28,8 @@ public class RestaurantController {
     }
     
     @DeleteMapping("/{id}")
-    public RestaurantResponse deleteRestaurant(RestaurantResponse restaurantResponse){
-        return service.deleteRestaurant(restaurantResponse);
+    public void deleteRestaurant(@PathVariable Long id){
+        service.deleteRestaurant(id);
     }
 
     @GetMapping("")
