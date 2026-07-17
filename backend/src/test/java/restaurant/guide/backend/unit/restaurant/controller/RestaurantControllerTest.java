@@ -16,6 +16,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import restaurant.guide.backend.restaurant.controller.RestaurantController;
 import restaurant.guide.backend.restaurant.dto.RestaurantResponse;
+import restaurant.guide.backend.restaurant.model.RestaurantCategory;
 import restaurant.guide.backend.restaurant.service.RestaurantService;
 
 @WebMvcTest(RestaurantController.class)
@@ -32,7 +33,7 @@ public class RestaurantControllerTest {
             1L,
             "Test name",
             "Test city",
-            "Test category"
+            RestaurantCategory.AFRICAINE
         );
 
         when(restaurantService.getById(1L)).thenReturn(restaurant);
@@ -42,7 +43,7 @@ public class RestaurantControllerTest {
                 .andExpect(jsonPath("$.id").value(1))
                 .andExpect(jsonPath("$.name").value("Test name"))
                 .andExpect(jsonPath("$.city").value("Test city"))
-                .andExpect(jsonPath("$.category").value("Test category"));
+                .andExpect(jsonPath("$.category").value("AFRICAINE"));
         
         verify(restaurantService).getById(1L);
     }
@@ -53,14 +54,14 @@ public class RestaurantControllerTest {
             1L,
             "Test name 1",
             "Test city 1",
-            "Test category 1"
+            RestaurantCategory.AFRICAINE
         );
 
         RestaurantResponse restaurant2 = new RestaurantResponse(
             2L,
             "Test name 2",
             "Test city 2",
-            "Test category 2"
+            RestaurantCategory.ASIATIQUE
         );
 
         when(restaurantService.getAll()).thenReturn(List.of(restaurant1, restaurant2));

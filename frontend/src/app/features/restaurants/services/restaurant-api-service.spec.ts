@@ -4,7 +4,7 @@ import { HttpTestingController, provideHttpClientTesting } from '@angular/common
 
 import { RestaurantApiService } from './restaurant-api-service';
 import { environment } from '../../../../environments/environment';
-import { Restaurant } from '../models/restaurants';
+import { Restaurant } from '../models/Restaurants';
 
 describe('RestaurantApiService', () => {
   let service: RestaurantApiService;

@@ -17,12 +17,12 @@ public class Restaurant {
 
     private String city;
 
-    private String category;
+    private RestaurantCategory category;
 
     public Restaurant() {
     }
 
-    public Restaurant(Long id, String name, String city, String category) {
+    public Restaurant(Long id, String name, String city, RestaurantCategory category) {
         this.id = id;
         this.name = name;
         this.city = city;
@@ -54,11 +54,11 @@ public class Restaurant {
         this.city = city;
     }
 
-    public String getCategory() {
+    public RestaurantCategory getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(RestaurantCategory category) {
         this.category = category;
     }    
     //#endregion

@@ -22,6 +22,7 @@ import restaurant.guide.backend.restaurant.dto.RestaurantResponse;
 import restaurant.guide.backend.restaurant.exceptions.RestaurantNotFoundException;
 import restaurant.guide.backend.restaurant.mapper.RestaurantMapper;
 import restaurant.guide.backend.restaurant.model.Restaurant;
+import restaurant.guide.backend.restaurant.model.RestaurantCategory;
 import restaurant.guide.backend.restaurant.repository.RestaurantRepository;
 import restaurant.guide.backend.restaurant.service.RestaurantService;
 
@@ -45,13 +46,13 @@ public class RestaurantServiceTest {
         restaurant.setId(1L);
         restaurant.setName("Test name");
         restaurant.setCity("Test city");
-        restaurant.setCategory("Test category");
+        restaurant.setCategory(RestaurantCategory.AFRICAINE);
 
         response = new RestaurantResponse(
             1l,
             "Test name",
             "Test city",
-            "Test category"
+            RestaurantCategory.AFRICAINE
         );
     }
 
@@ -84,13 +85,13 @@ public class RestaurantServiceTest {
         restaurant2.setId(2L);
         restaurant2.setName("Test name 2");
         restaurant2.setCity("Test city 2");
-        restaurant2.setCategory("Test category 2");
+        restaurant2.setCategory(RestaurantCategory.ASIATIQUE);
 
         RestaurantResponse response2 = new RestaurantResponse(
             2L,
             "Test name 2",
             "Test city 2",
-            "Test category 2"
+            RestaurantCategory.ASIATIQUE
         );
 
         when(repository.findAll()).thenReturn(List.of(restaurant, restaurant2));
