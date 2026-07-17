@@ -16,6 +16,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import jakarta.transaction.Transactional;
 import restaurant.guide.backend.restaurant.model.Restaurant;
+import restaurant.guide.backend.restaurant.model.RestaurantCategory;
 import restaurant.guide.backend.restaurant.repository.RestaurantRepository;
 
 @SpringBootTest
@@ -39,12 +40,12 @@ public class RestaurantIntegrationTest {
         restaurant1 = new Restaurant();
         restaurant1.setName("Test name 1");
         restaurant1.setCity("Test city 1");
-        restaurant1.setCategory("Test category 1");
+        restaurant1.setCategory(RestaurantCategory.AFRICAINE);
 
         restaurant2 = new Restaurant();
         restaurant2.setName("Test name 2");
         restaurant2.setCity("Test city 2");
-        restaurant2.setCategory("Test category 2");
+        restaurant2.setCategory(RestaurantCategory.ASIATIQUE);
 
         repository.saveAll(List.of(restaurant1, restaurant2));
     }
@@ -57,11 +58,11 @@ public class RestaurantIntegrationTest {
 
                 .andExpect(jsonPath("$[0].name").value("Test name 1"))
                 .andExpect(jsonPath("$[0].city").value("Test city 1"))
-                .andExpect(jsonPath("$[0].category").value("Test category 1"))
+                .andExpect(jsonPath("$[0].category").value("AFRICAINE"))
 
                 .andExpect(jsonPath("$[1].name").value("Test name 2"))
                 .andExpect(jsonPath("$[1].city").value("Test city 2"))
-                .andExpect(jsonPath("$[1].category").value("Test category 2"));
+                .andExpect(jsonPath("$[1].category").value("ASIATIQUE"));
     }
 
     @Test
@@ -71,7 +72,7 @@ public class RestaurantIntegrationTest {
                 .andExpect(jsonPath("$.id").value(restaurant1.getId()))
                 .andExpect(jsonPath("$.name").value("Test name 1"))
                 .andExpect(jsonPath("$.city").value("Test city 1"))
-                .andExpect(jsonPath("$.category").value("Test category 1"));
+                .andExpect(jsonPath("$.category").value("AFRICAINE"));
     }
 
     @Test

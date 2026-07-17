@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
 
 import restaurant.guide.backend.restaurant.model.Restaurant;
+import restaurant.guide.backend.restaurant.model.RestaurantCategory;
 import restaurant.guide.backend.restaurant.repository.RestaurantRepository;
 
 @DataJpaTest
@@ -20,7 +21,7 @@ public class RestaurantRepositoryTest {
 
     private Restaurant restaurant;
 
-    Restaurant createRestaurant(String name, String city, String category){
+    Restaurant createRestaurant(String name, String city, RestaurantCategory category){
         Restaurant restaurant = new Restaurant();
         restaurant.setName(name);
         restaurant.setCity(city);
@@ -30,7 +31,7 @@ public class RestaurantRepositoryTest {
 
     @BeforeEach
     void setUp(){
-        restaurant = createRestaurant("Test name", "Test city", "Test category");
+        restaurant = createRestaurant("Test name", "Test city", RestaurantCategory.AFRICAINE);
     }
 
     @Test
@@ -42,8 +43,8 @@ public class RestaurantRepositoryTest {
 
     @Test
     void shouldFindRestaurantsByCity() {
-        Restaurant restaurant2 = createRestaurant("Test name 2", "Test city", "Test category");
-        Restaurant restaurant3 = createRestaurant("Test name 3", "Test city 2", "Test category");
+        Restaurant restaurant2 = createRestaurant("Test name 2", "Test city", RestaurantCategory.ASIATIQUE);
+        Restaurant restaurant3 = createRestaurant("Test name 3", "Test city 2", RestaurantCategory.BRUNCH_PETIT_DEJ);
 
         repository.saveAll(List.of(restaurant, restaurant2, restaurant3));
 
@@ -56,7 +57,7 @@ public class RestaurantRepositoryTest {
 
     @Test
     void shouldReturnAllRestaurants() {
-        Restaurant restaurant2 = createRestaurant("Test city 2", "Test city", "Test category");
+        Restaurant restaurant2 = createRestaurant("Test city 2", "Test city", RestaurantCategory.ASIATIQUE);
         
         repository.saveAll(List.of(restaurant, restaurant2));
 
