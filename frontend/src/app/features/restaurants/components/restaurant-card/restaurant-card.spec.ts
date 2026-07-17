@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RestaurantCard } from './restaurant-card';
-import { Restaurant } from '../../models/restaurants';
+import { Restaurant } from '../../models/Restaurants';
 import { By } from '@angular/platform-browser';
 
 describe('RestaurantCard', () => {

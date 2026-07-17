@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Restaurant } from '../models/restaurants';
+import { Restaurant } from '../models/Restaurants';
 import { environment } from '../../../../environments/environment';
 
 @Injectable({
@@ -12,14 +12,10 @@ export class RestaurantApiService {
   private readonly apiUrl = environment.apiUrl;
 
   getAll() {
-    return this.http.get<Restaurant[]>(
-      `${this.apiUrl}/restaurants`
-    );
+    return this.http.get<Restaurant[]>(`${this.apiUrl}/restaurants`);
   }
 
-  getById(id:number){
-    return this.http.get<Restaurant>(
-      `${this.apiUrl}/restaurants/${id}`
-    )
+  getById(id: number) {
+    return this.http.get<Restaurant>(`${this.apiUrl}/restaurants/${id}`);
   }
 }

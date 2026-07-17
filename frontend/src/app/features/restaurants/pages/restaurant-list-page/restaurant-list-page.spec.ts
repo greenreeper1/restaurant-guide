@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RestaurantListPage } from './restaurant-list-page';
-import { Restaurant } from '../../models/restaurants';
+import { Restaurant } from '../../models/Restaurants';
 import { signal } from '@angular/core';
 import { RestaurantStore } from '../../store/restaurant-store';
 import { By } from '@angular/platform-browser';

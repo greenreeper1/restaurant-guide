@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { Restaurant } from '../models/restaurants';
+import { Restaurant } from '../models/Restaurants';
 import { RestaurantStore } from './restaurant-store';
 import { RestaurantApiService } from '../services/restaurant-api-service';
 import { of, Subject, throwError } from 'rxjs';

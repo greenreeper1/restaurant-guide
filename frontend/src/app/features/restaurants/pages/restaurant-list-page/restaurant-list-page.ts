@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { Restaurant } from '../../models/restaurants';
+import { Restaurant } from '../../models/Restaurants';
 import { RestaurantStore } from '../../store/restaurant-store';
 import { RestaurantCard } from '../../components/restaurant-card/restaurant-card';
 
@@ -11,7 +11,7 @@ import { RestaurantCard } from '../../components/restaurant-card/restaurant-card
 })
 export class RestaurantListPage {
   readonly store = inject(RestaurantStore);
-  
+
   constructor() {
     this.store.load();
   }
