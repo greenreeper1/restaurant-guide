@@ -1,0 +1,25 @@
+MVP guide resto :
+
+- liste des restaurants enregistrés dans la base avec leurs infos (tableau)
+- fiche restaurants
+- ajouter un restaurant
+- modifier les infos d'un restaurant
+- supprimer un restaurant
+- recherche par note
+- recherche par catégorie (type de cuisine)
+- recherche par range de prix ?
+
+
+- mettre sous forme de carte
+- pouvoir sélectionner la ville
+- gestion des utilisateurs
+- nombre de visite d'un resto pour un user
+- Authenitifaction JWT
+- Favoris
+- mettre une note
+- ajouter un avis
+
+- Upload d'images
+- Géolocalisation
+- Recommandations ?
+- Statistiques ?

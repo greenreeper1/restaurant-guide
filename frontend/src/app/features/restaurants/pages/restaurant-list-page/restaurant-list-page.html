@@ -1,0 +1,12 @@
+<h1>Restaurants</h1>
+@if (store.loading()) {
+    <p>Chargement...</p>
+} @else {
+    <div class="restaurant-list">
+        @for (restaurant of store.restaurants(); track restaurant.id) {
+            <app-restaurant-card
+                [restaurant]="restaurant">
+            </app-restaurant-card>
+        }
+    </div>
+}
