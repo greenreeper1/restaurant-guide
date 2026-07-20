@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Slf4j
 @RestController
@@ -41,7 +42,7 @@ public class RestaurantController {
     }
     
     @PostMapping("/register")
-    public RestaurantResponse register(RestaurantResponse restaurantResponse){
+    public RestaurantResponse register(@RequestBody RestaurantResponse restaurantResponse){
         log.info("Adding new restaurant \"{}\" to database", restaurantResponse.name());
         return service.registerRestaurant(restaurantResponse);
     }
