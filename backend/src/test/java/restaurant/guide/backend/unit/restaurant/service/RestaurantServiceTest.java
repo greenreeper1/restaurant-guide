@@ -14,6 +14,7 @@ import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -107,5 +108,33 @@ public class RestaurantServiceTest {
 
         verify(repository).findAll();
         verify(mapper, times(2)).toRestaurantResponse(any(Restaurant.class));
+    }
+
+    @Test
+    void shouldRegisterRestaurant() {
+        // Given
+        RestaurantResponse restaurant = new RestaurantResponse(
+                1L,
+                "Test name",
+                "Test city",
+                RestaurantCategory.AFRICAINE
+        );
+
+        // When
+        RestaurantResponse result = service.registerRestaurant(restaurant);
+
+        // Then
+        ArgumentCaptor<Restaurant> captor = ArgumentCaptor.forClass(Restaurant.class);
+
+        verify(repository, times(1)).save(captor.capture());
+
+        Restaurant savedRestaurant = captor.getValue();
+
+        assertEquals(1L, savedRestaurant.getId());
+        assertEquals("Test name", savedRestaurant.getName());
+        assertEquals("Test city", savedRestaurant.getCity());
+        assertEquals(RestaurantCategory.AFRICAINE, savedRestaurant.getCategory());
+
+        assertEquals(restaurant, result);
     }
 }
