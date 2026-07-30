@@ -1,6 +1,8 @@
 export interface Restaurant {
-    id:number,
-    name: string,
-    city: string,
-    category: string
+  id: number;
+  name: string;
+  latitude: number;
+  longitude: number;
+  city: string;
+  category: string;
 }

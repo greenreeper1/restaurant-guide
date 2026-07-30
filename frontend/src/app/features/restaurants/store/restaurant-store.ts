@@ -1,6 +1,6 @@
 import { inject, Injectable, signal } from '@angular/core';
-import { RestaurantApiService } from '../services/restaurant-api-service';
-import { Restaurant } from '../models/Restaurants';
+import { RestaurantApiService } from '@features/restaurants/services/restaurant-api-service';
+import { Restaurant } from '@features/restaurants/models/Restaurants';
 
 @Injectable({
   providedIn: 'root',

@@ -2,9 +2,9 @@ import { TestBed } from '@angular/core/testing';
 
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 
-import { RestaurantApiService } from './restaurant-api-service';
-import { environment } from '../../../../environments/environment';
-import { Restaurant } from '../models/Restaurants';
+import { RestaurantApiService } from '@features/restaurants/services/restaurant-api-service';
+import { environment } from '@src/environments/environment';
+import { Restaurant } from '@features/restaurants/models/Restaurants';
 
 describe('RestaurantApiService', () => {
   let service: RestaurantApiService;
@@ -30,8 +30,22 @@ describe('RestaurantApiService', () => {
 
   it('should fetch all restaurants', () => {
     const mockRestaurants: Restaurant[] = [
-      { id: 1, name: 'Test name 1', city: 'Test city 1', category: 'Test category 1' },
-      { id: 2, name: 'Test name 2', city: 'Test city 2', category: 'Test category 2' },
+      {
+        id: 1,
+        name: 'Test name 1',
+        city: 'Test city 1',
+        category: 'Test category 1',
+        latitude: 48.2546,
+        longitude: 68.0246,
+      },
+      {
+        id: 2,
+        name: 'Test name 2',
+        city: 'Test city 2',
+        category: 'Test category 2',
+        latitude: 68.0246,
+        longitude: 48.2546,
+      },
     ];
 
     service.getAll().subscribe((restaurants) => {
@@ -52,6 +66,8 @@ describe('RestaurantApiService', () => {
       name: 'Test name 1',
       city: 'Test city 1',
       category: 'Test category 1',
+      latitude: 68.0246,
+      longitude: 48.2546,
     };
 
     service.getById(1).subscribe((restaurant) => {
