@@ -1,7 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
-import { Restaurant } from '../../models/Restaurants';
-import { RestaurantStore } from '../../store/restaurant-store';
-import { RestaurantCard } from '../../components/restaurant-card/restaurant-card';
+import { RestaurantStore } from '@features/restaurants/store/restaurant-store';
+import { RestaurantCard } from '@features/restaurants/components/restaurant-card/restaurant-card';
 
 @Component({
   selector: 'app-restaurant-list-page',

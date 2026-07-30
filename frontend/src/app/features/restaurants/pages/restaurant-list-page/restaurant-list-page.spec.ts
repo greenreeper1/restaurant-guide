@@ -1,11 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RestaurantListPage } from './restaurant-list-page';
-import { Restaurant } from '../../models/Restaurants';
+import { RestaurantListPage } from '@features/restaurants/pages/restaurant-list-page/restaurant-list-page';
+import { Restaurant } from '@features/restaurants/models/Restaurants';
 import { signal } from '@angular/core';
-import { RestaurantStore } from '../../store/restaurant-store';
+import { RestaurantStore } from '@features/restaurants/store/restaurant-store';
 import { By } from '@angular/platform-browser';
-import { RestaurantCard } from '../../components/restaurant-card/restaurant-card';
+import { RestaurantCard } from '@features/restaurants/components/restaurant-card/restaurant-card';
 
 describe('RestaurantListPage', () => {
   let component: RestaurantListPage;
@@ -17,12 +17,16 @@ describe('RestaurantListPage', () => {
       name: 'Test name 1',
       city: 'Test city 1',
       category: 'Test category 1',
+      latitude: 68.0246,
+      longitude: 48.2546,
     },
     {
       id: 2,
       name: 'Test name 2',
       city: 'Test city 2',
       category: 'Test category 2',
+      latitude: 48.2546,
+      longitude: 68.0246,
     },
   ]);
 
@@ -42,12 +46,16 @@ describe('RestaurantListPage', () => {
         name: 'Test name 1',
         city: 'Test city 1',
         category: 'Test category 1',
+        latitude: 68.0246,
+        longitude: 48.2546,
       },
       {
         id: 2,
         name: 'Test name 2',
         city: 'Test city 2',
         category: 'Test category 2',
+        latitude: 48.2546,
+        longitude: 68.0246,
       },
     ]);
     loading.set(false);

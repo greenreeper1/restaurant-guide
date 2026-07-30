@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
-import { Restaurant } from '../models/Restaurants';
-import { RestaurantStore } from './restaurant-store';
-import { RestaurantApiService } from '../services/restaurant-api-service';
+import { Restaurant } from '@features/restaurants/models/Restaurants';
+import { RestaurantStore } from '@features/restaurants/store/restaurant-store';
+import { RestaurantApiService } from '@features/restaurants/services/restaurant-api-service';
 import { of, Subject, throwError } from 'rxjs';
 
 describe('RestaurantStore', () => {
@@ -16,12 +16,16 @@ describe('RestaurantStore', () => {
       name: 'Test name 1',
       city: 'Test city 1',
       category: 'Test category 1',
+      latitude: 48.2546,
+      longitude: 68.0246,
     },
     {
       id: 2,
       name: 'Test name 2',
       city: 'Test city 2',
       category: 'Test category 2',
+      latitude: 68.0246,
+      longitude: 48.2546,
     },
   ];
 

@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RestaurantCard } from './restaurant-card';
-import { Restaurant } from '../../models/Restaurants';
+import { RestaurantCard } from '@features/restaurants/components/restaurant-card/restaurant-card';
+import { Restaurant } from '@features/restaurants/models/Restaurants';
 import { By } from '@angular/platform-browser';
 
 describe('RestaurantCard', () => {
@@ -13,6 +13,8 @@ describe('RestaurantCard', () => {
     name: 'Test name 1',
     city: 'Test city 1',
     category: 'Test category 1',
+    latitude: 68.0246,
+    longitude: 48.2546,
   };
 
   beforeEach(async () => {

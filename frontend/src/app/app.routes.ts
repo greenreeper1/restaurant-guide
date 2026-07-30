@@ -14,4 +14,9 @@ export const routes: Routes = [
             import('./features/restaurants/pages/restaurant-detail-pages')
                 .then(m => m.RestaurantDetailPage)
     }*/
+  {
+    path: 'map',
+    loadComponent: () => import('./features/map/components/map/map').then((m) => m.MapComponent),
+    //   import('./features/restaurants/pages/map-page/map-page').then((m) => m.MapPage),
+  },
 ];
